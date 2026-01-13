@@ -43,4 +43,7 @@ class AdminController extends Controller
         $guru->delete();
         return redirect('/guru');
     }
+    public function editguru(){
+        return view('editguru');
+    }
 }

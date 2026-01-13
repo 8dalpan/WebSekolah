@@ -43,7 +43,8 @@ class AdminController extends Controller
         $guru->delete();
         return redirect('/guru');
     }
-    public function editguru(){
-        return view('editguru');
+    public function editguru(Request $request,$id){
+        $guru=Guru::findOrFail($id);
+        return view('editguru',compact('guru'));
     }
 }

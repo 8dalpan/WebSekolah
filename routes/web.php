@@ -21,4 +21,4 @@ Route::delete('/siswa/{id}',[AdminController::class,'deletesiswa']);
 Route::get('/guru',[AdminController::class,'guru']);
 Route::post('/guru',[AdminController::class,'addguru']);
 Route::delete('/guru/{id}',[AdminController::class, 'deleteguru']);
-Route::get('/editguru',[AdminController::class,'editguru']);
+Route::get('/editguru/{id}',[AdminController::class,'editguru']);

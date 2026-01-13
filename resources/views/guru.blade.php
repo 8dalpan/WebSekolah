@@ -134,7 +134,7 @@
                         <td>{{$guru->status_kepegawaian}}</td>
                         <td class="text-center">
                         <div class="d-flex gap-1 justify-content-center">
-                        <a href="editguru" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="editguru/{{$guru->id}}" class="btn btn-sm btn-warning">Edit</a>
                         <form action="/guru/{{$guru->id}}" method="post">
                             @csrf
                             @method('DELETE')

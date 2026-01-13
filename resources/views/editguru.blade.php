@@ -13,7 +13,7 @@
 
                 <div class="mb-3">
                 <label>NIP</label>
-                <input type="text" name="nip" class="form-control" required>
+                <input type="text" name="nip" class="form-control" value="{{$guru->nama}}" required>
                 </div>
 
                 <div class="mb-3">

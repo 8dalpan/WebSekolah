@@ -1,5 +1,5 @@
             @extends('layouts.mainlayout')
-            @section('title', 'Halaman Siswa')
+            @section('title', 'Halaman Edit Siswa')
             @section('content')
             <div class="container mt-3 ">
             <div class="card shadow">

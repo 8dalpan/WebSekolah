@@ -18,7 +18,22 @@ class MapelFactory extends Factory
     {
         return [
             //
-            
-        ];
+            'nama_mapel'=>$this->faker->randomElement([
+    // RPL
+    'Pemrograman Web',
+    'Basis Data',
+    'Laravel',
+
+    // DKV
+    'Desain Grafis',
+    'Tipografi',
+    'Motion Graphic',
+
+    // Jaringan
+    'Mikrotik',
+    'Administrasi Server',
+    'Keamanan Jaringan'
+    ])
+    ];
     }
 }

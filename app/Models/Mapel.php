@@ -9,9 +9,12 @@ class Mapel extends Model
 {
     use HasFactory;
     protected $table='mapels';
+    protected $fillable = [
+        'nama_mapel'
+    ];
 
     public function mapel(){
-        return $this->hasOne(Mapel::class);
+
     }
 
 }

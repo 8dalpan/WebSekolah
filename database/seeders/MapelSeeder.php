@@ -16,9 +16,7 @@ class MapelSeeder extends Seeder
     public function run()
     {
         //
-        Mapel::create([
-        'nama_mapel'=>'web'
-        ]);
+        Mapel::factory()->count(3)->create();
 
     }
 }

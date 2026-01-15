@@ -1,5 +1,5 @@
 @extends('layouts.mainlayout')
-            @section('title','Halaman Guru')
+            @section('title','Halaman Edit Guru')
             @section('content')
             <div class="container mt-3 ">
             <div class="container mt-3 ">

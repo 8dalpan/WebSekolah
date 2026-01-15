@@ -25,3 +25,8 @@ Route::post('/guru',[AdminController::class,'addguru']);
 Route::delete('/guru/{id}',[AdminController::class, 'deleteguru']);
 Route::get('/editguru/{id}',[AdminController::class,'editguru']);
 Route::put('/editguru/{id}/updateguru',[AdminController::class,'updateguru']);
+Route::get('/mapel', [AdminController::class,'mapel']);
+Route::post('/mapel', [AdminController::class,'addmapel']);
+Route::delete('deletemapel/{id}',[AdminController::class,'deletemapel']);
+Route::get('/editmapel/{id}',[AdminController::class,'editmapel']);
+Route::put('/editmapel/{id}/updatemapel',[AdminController::class,'updatemapel']);

@@ -21,9 +21,11 @@
     <div class="bg-primary text-white p-3" style="width:230px; min-height:100vh;">
 
 
-        <h4 class="text-center">Selamat Datang </h4>
+        <div class="d-flex justify-content-center align-items-center  mb-3">
 
-        <hr>
+    <span class="fw-bold  fs-5">Selamat Datang</span>
+</div>
+
 
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -45,7 +47,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+                <a href="/mapel" class="nav-link text-white">
                     <i class="fa fa-book"></i> Mata Pelajaran
                 </a>
             </li>

@@ -9,7 +9,7 @@
                 <div class="col-md-3">
                     <div class="card border-primary">
                         <div class="card-body">
-                            <h4 class="text-primary">350</h4>
+                            <h4 class="text-primary">{{$total_siswa}}</h4>
                             <p>Total Siswa</p>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                 <div class="col-md-3">
                     <div class="card border-primary">
                         <div class="card-body">
-                            <h4 class="text-primary">25</h4>
+                            <h4 class="text-primary">{{$total_guru}}</h4>
                             <p>Total Guru</p>
                         </div>
                     </div>

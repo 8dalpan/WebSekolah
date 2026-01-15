@@ -23,7 +23,7 @@ class SiswaFactory extends Factory
             'nis'=>mt_rand(0000000,9999999),
             'nama'=> $this->faker->name(),
             'jenis_kelamin'=> Arr::random(['L','P']),
-            'kelas'=> Arr::random(['10','11','12']),
+            'kelas'=> Arr::random(['X','XI','XII']),
             'jurusan'=> Arr::random(['TKJ','RPL','DKV']),
             'no_hp'=> $this->faker->phoneNumber(),
 

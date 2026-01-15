@@ -19,13 +19,13 @@ class GuruFactory extends Factory
     {
         return [
             //
-            'nip' => $this->faker->unique()->numberBetween(100000,999999),
+        'nip' => $this->faker->unique()->numberBetween(100000,999999),
     'nama' => $this->faker->name(),
     'jenis_kelamin' => Arr::random(['L','P']),
     'mata_pelajaran' => Arr::random(['Web','Jaringan','Design Grafis']),
     'no_hp' => $this->faker->phoneNumber(),
     'alamat' => $this->faker->address(),
-    'status_kepegawaian' => Arr::random(['PNS','Honorer','PPPK']),
+    'status_kepegawaian' => Arr::random(['ASN','Honorer','PPPK']),
         ];
     }
 }

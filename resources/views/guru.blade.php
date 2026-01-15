@@ -149,7 +149,9 @@
                     </tbody>
 
                     </table>
-
+                    <div class="my-3 pagination">
+                        {{$data->links()}}
+                    </div>
                     </div>
         </div>
 

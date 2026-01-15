@@ -129,14 +129,19 @@
             <td>{{$siswa->kelas}}</td>
             <td>{{$siswa->jurusan}}</td>
             <td>{{$siswa->no_hp}}</td>
-            <td class="text-center">
+            <td class="text-center ">
+                <div class="d-flex justify-content-center gap-1">
+                <a href="/editsiswa/{{ $siswa->id }}"
+                    class="btn btn-sm btn-warning">
+                        Edit
+                </a>
                 <form action="/siswa/{{$siswa->id}}" method="post">
                     @csrf
                     @method('DELETE')
-                <button class="btn btn-sm btn-warning">Edit</button>
                 <button class="btn btn-sm btn-danger">Hapus</button>
+                </form>
             </td>
-            </form>
+        </div>
         </tr>
             @endforeach
 
@@ -144,6 +149,9 @@
         </tbody>
 
         </table>
+        <div class="my-3 pagination">
+                {{$data->links()}}
+        </div>
 
         </div>
         </div>

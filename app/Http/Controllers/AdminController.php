@@ -6,6 +6,7 @@ use App\Models\Guru;
 use App\Models\Mapel;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoresiswaRequest;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class AdminController extends Controller
@@ -22,16 +23,8 @@ class AdminController extends Controller
         return view('siswa',compact('data'));
 
     }
-    public function addsiswa(Request $request){
-    $request->validate([
-        'nis' => 'required|unique:siswa,nis|max:255',
-        'nama' => 'required',
-        'jenis_kelamin'=>'required',
-        'kelas'=>'required',
-        'jurusan'=>'required',
-        'no_hp'=>'required|regex:/^[0-9]+$/|max:13',
-    ]);
-    Siswa::create($request->all());
+    public function addsiswa(StoresiswaRequest $request){
+    Siswa::create($request->validated());
     return redirect('/siswa');
     }
     public function editsiswa($id){
@@ -95,6 +88,10 @@ class AdminController extends Controller
     }
 
     public function addmapel(Request $request){
+    $request->validate([
+    'nama_mapel' => 'required',
+
+]);
     Mapel::create($request->all());
     return redirect('/mapel');
     }
@@ -110,10 +107,10 @@ class AdminController extends Controller
         }
 
         public function updatemapel(Request $request,$id){
-            $mapel=Mapel::findOrFail($id);
-            $mapel->update($request->only([
-                'nama_mapel'
-            ]));
+        $request->validate([
+        'nama_mapel' => 'required',
+]);
+            Mapel::findOrFail($id)->update($request->all());
             return redirect('/mapel');
         }
 

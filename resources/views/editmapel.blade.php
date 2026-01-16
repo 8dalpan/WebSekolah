@@ -14,7 +14,10 @@
             <div class="col-md-12">
             <div class="mb-3">
                 <label class="form-label">Nama Mata Pelajaran </label>
-                <input type="text" name="nama_mapel" class="form-control" required value="{{$mapel->nama_mapel}}">
+                <input type="text" name="nama_mapel" class="form-control"  value="{{$mapel->nama_mapel}}">
+                @error('nama_mapel')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
             </div>
             </div>

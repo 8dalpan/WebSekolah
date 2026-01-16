@@ -17,7 +17,7 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
 
-            <form action="siswa" method="POST">
+            <form action="/siswa" method="POST">
             @csrf
 
             <div class="modal-body">
@@ -28,7 +28,8 @@
 
             <div class="mb-3">
                 <label class="form-label">NIS</label>
-                <input type="text" name="nis" class="form-control" required>
+                <input type="text" name="nis" class="form-control" required >
+
             </div>
 
             <div class="mb-3">

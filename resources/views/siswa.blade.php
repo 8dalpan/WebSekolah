@@ -29,7 +29,6 @@
             <div class="mb-3">
                 <label class="form-label">NIS</label>
                 <input type="text" name="nis" class="form-control" required >
-
             </div>
 
             <div class="mb-3">
@@ -41,8 +40,8 @@
                 <label class="form-label">Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-select" required>
                     <option value="">Pilih</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
                 </select>
             </div>
 
@@ -66,8 +65,7 @@
                 <label class="form-label">Jurusan</label>
                 <select name="jurusan" class="form-select" required>
                     <option value="">Pilih</option>
-                    <option>IPA</option>
-                    <option>IPS</option>
+                    <option value="">DKV</option>
                     <option>RPL</option>
                     <option>TKJ</option>
                 </select>
@@ -132,7 +130,7 @@
             <td>{{$siswa->no_hp}}</td>
             <td class="text-center ">
                 <div class="d-flex justify-content-center gap-1">
-                <a href="/editsiswa/{{ $siswa->id }}"
+                <a href="/siswa/{{ $siswa->id }}"
                     class="btn btn-sm btn-warning">
                         Edit
                 </a>

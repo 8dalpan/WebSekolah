@@ -6,7 +6,7 @@
             <div class="card-header bg-primary text-white">
             <h5 class="mb-0">Edit Mapel</h5>
         </div>
-            <form action="/editmapel/{{$mapel->id}}/updatemapel" method="POST" class="form-control">
+            <form action="/mapel/{{$mapel->id}}/" method="POST" class="form-control">
             @csrf
             @method('PUT')
             <div class="modal-body">

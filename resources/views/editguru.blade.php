@@ -7,7 +7,7 @@
             <div class="card-header bg-primary text-white">
             <h5 class="mb-0">Edit Guru</h5>
         </div>
-            <form action="/editguru/{{$guru->id}}/updateguru" method="POST" class="form-control">
+            <form action="/guru/{{$guru->id}}/" method="POST" class="form-control">
         @csrf
         @method('PUT')
         <div class="modal-body">

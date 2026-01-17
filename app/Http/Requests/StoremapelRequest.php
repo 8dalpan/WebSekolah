@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreguruRequest extends FormRequest
+class StoremapelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,7 @@ class StoreguruRequest extends FormRequest
     public function rules()
     {
         return [
-    'nip' => 'required|unique:guru,nip|max:20',
-    'nama' => 'required|max:50',
-    'jenis_kelamin' => 'required',
-    'mata_pelajaran' => 'required|max:30',
-    'no_hp' => 'required|regex:/^[0-9]+$/|max:13',
-    'alamat' => 'required|max:200',
-    'status_kepegawaian' => 'required|max:30',
+    'nama_mapel' => 'required'
         ];
     }
 }

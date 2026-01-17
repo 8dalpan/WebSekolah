@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\MapelController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +18,6 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/',[AdminController::class,'index']);
-Route::get('/siswa',[AdminController::class,'siswa']);
-Route::post('/siswa',[AdminController::class,'addsiswa']);
-Route::get('/editsiswa/{id}',[AdminController::class,'editsiswa']);
-Route::put('/editsiswa/{id}/updatesiswa',[AdminController::class,'updatesiswa']);
-Route::delete('/siswa/{id}',[AdminController::class,'deletesiswa']);
-Route::get('/guru',[AdminController::class,'guru']);
-Route::post('/guru',[AdminController::class,'addguru']);
-Route::delete('/guru/{id}',[AdminController::class, 'deleteguru']);
-Route::get('/editguru/{id}',[AdminController::class,'editguru']);
-Route::put('/editguru/{id}/updateguru',[AdminController::class,'updateguru']);
-Route::get('/mapel', [AdminController::class,'mapel']);
-Route::post('/mapel', [AdminController::class,'addmapel']);
-Route::delete('deletemapel/{id}',[AdminController::class,'deletemapel']);
-Route::get('/editmapel/{id}',[AdminController::class,'editmapel']);
-Route::put('/editmapel/{id}/updatemapel',[AdminController::class,'updatemapel']);
+Route::resource('/siswa', SiswaController::class);
+Route::resource('/guru', GuruController::class);
+Route::resource('mapel', MapelController::class);

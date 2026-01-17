@@ -15,7 +15,7 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
 
-            <form action="mapel" method="POST">
+            <form action="/mapel" method="POST">
             @csrf
 
             <div class="modal-body">
@@ -68,11 +68,11 @@
             <td>{{$mapel->nama_mapel}}</td>
             <td class="text-center ">
                 <div class="d-flex justify-content-center gap-1">
-                <a href="/editmapel/{{$mapel->id}}"
+                <a href="/mapel/{{$mapel->id}}"
                     class="btn btn-sm btn-warning">
                         Edit
                 </a>
-                <form action="/deletemapel/{{$mapel->id}}" method="post">
+                <form action="/mapel/{{$mapel->id}}" method="post">
                     @csrf
                     @method('DELETE')
                 <button class="btn btn-sm btn-danger">Hapus</button>

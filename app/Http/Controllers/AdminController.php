@@ -17,7 +17,8 @@ class AdminController extends Controller
     public function index(){
         $total_siswa=Siswa::count();
         $total_guru=Guru::count();
-        return view('dashboard',compact('total_siswa','total_guru'));
+        $total_mapel=Guru::count();
+        return view('dashboard',compact('total_siswa','total_guru','total_mapel'));
     }
 }
 

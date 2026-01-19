@@ -92,17 +92,12 @@
         </div>
         </div>
     </div>
-
-
-        {{-- table --}}
+                        {{-- table --}}
                         <div class="card shadow">
-
                     <div class="card-header bg-primary text-white">
                         <h5 class="mb-0">Data Guru</h5>
                     </div>
-
                     <div class="card-body">
-
                     <table class="table table-bordered table-striped table-hover">
                     <thead class="table-primary text-center">
                     <tr>

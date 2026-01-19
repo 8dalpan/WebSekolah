@@ -17,7 +17,7 @@ use App\Http\Controllers\SiswaController;
 |
 */
 
-Route::get('/',[AdminController::class,'index']);
+Route::resource('/', AdminController::class);
 Route::resource('/siswa', SiswaController::class);
 Route::resource('/guru', GuruController::class);
 Route::resource('mapel', MapelController::class);

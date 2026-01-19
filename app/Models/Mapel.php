@@ -14,7 +14,7 @@ class Mapel extends Model
     ];
 
     public function mapel(){
-
+    return $this->belongsTo(Mapel::class);
     }
 
 }

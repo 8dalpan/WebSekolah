@@ -17,4 +17,8 @@ class Siswa extends Model
         'no_hp'
         ];
         protected $table = 'siswa';
+        public function siswa(){
+        return $this->hasMany(Siswa::class);
+        }
+
 }

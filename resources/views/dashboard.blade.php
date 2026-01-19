@@ -27,8 +27,8 @@
                 <div class="col-md-3">
                     <div class="card border-primary">
                         <div class="card-body">
-                            <h4 class="text-primary">12</h4>
-                            <p>Kelas</p>
+                            <h4 class="text-primary">{{$total_mapel}}</h4>
+                            <p>Total Mata Pelajaran</p>
                         </div>
                     </div>
                 </div>

@@ -15,11 +15,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mapels', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_mapel');
-            $table->timestamps();
-        });
+    Schema::create('mapels', function (Blueprint $table) {
+    $table->id();
+    $table->string('nama_mapel');
+    $table->timestamps();
+});
+
     }
 
     /**

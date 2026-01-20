@@ -30,7 +30,8 @@ class StoresiswaRequest extends FormRequest
         'kelas' => 'required',
         'jurusan' => 'required',
         'no_hp' =>'required|regex:/^[0-9]+$/|max:13',
-    ];  
+        'mapel_id' => 'required|exists:mapels,id'
+    ];
     }
     public function messages()
     {

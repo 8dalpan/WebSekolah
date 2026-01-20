@@ -14,11 +14,12 @@ class Siswa extends Model
         'jenis_kelamin',
         'kelas',
         'jurusan',
-        'no_hp'
+        'no_hp',
+        'mapel_id'
         ];
         protected $table = 'siswa';
-        public function siswa(){
-        return $this->hasMany(Siswa::class);
-        }
+    public function mapel(){
+    return $this->belongsTo(Mapel::class);
+    }
 
 }

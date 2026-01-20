@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Mapel;
 use Faker\Factory as faker;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\siswa>
@@ -26,6 +27,7 @@ class SiswaFactory extends Factory
             'kelas'=> Arr::random(['X','XI','XII']),
             'jurusan'=> Arr::random(['TKJ','RPL','DKV']),
             'no_hp'=> $this->faker->phoneNumber(),
+            'mapel_id' => Mapel::factory(),
 
         ];
     }

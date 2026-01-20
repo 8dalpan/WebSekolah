@@ -5,9 +5,12 @@
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalSiswa">
                 + Tambah Siswa
             </button>
-
-
-
+            @if (Session::has('status'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ Session::get('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            @endif
             <div class="modal fade" id="modalSiswa" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -44,9 +47,6 @@
                     <option value="P">Perempuan</option>
                 </select>
             </div>
-
-
-
             </div>
 
             <div class="col-md-6">
@@ -65,21 +65,29 @@
                 <label class="form-label">Jurusan</label>
                 <select name="jurusan" class="form-select" required>
                     <option value="">Pilih</option>
-                    <option value="">DKV</option>
-                    <option>RPL</option>
-                    <option>TKJ</option>
+                    <option value="DKV">DKV</option>
+                    <option value="RPL">RPL</option>
+                    <option value="TKJ">TKJ</option>
+
                 </select>
             </div>
 
             <div class="mb-3">
+                <label class="form-label">Mata Pelajaran</label>
+                <select name="mapel_id" class="form-select" required>
+                    <option value="">Pilih Mapel</option>
+                    @foreach($mapels as $mapel)
+                    <option value="{{ $mapel->id }}">
+                    {{ $mapel->nama_mapel }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">No HP</label>
                 <input type="text" name="no_hp" class="form-control">
             </div>
-
-
-
-            </div>
-
+        </div>
             </div>
 
             </div>
@@ -114,6 +122,7 @@
             <th>Kelas</th>
             <th>Jurusan</th>
             <th>No HP</th>
+            <th>Nama Mapel</th>
             <th>Aksi</th>
         </tr>
         </thead>
@@ -128,17 +137,20 @@
             <td>{{$siswa->kelas}}</td>
             <td>{{$siswa->jurusan}}</td>
             <td>{{$siswa->no_hp}}</td>
+            <td>{{ $siswa->mapel->nama_mapel }}</td>
             <td class="text-center ">
                 <div class="d-flex justify-content-center gap-1">
                 <a href="/siswa/{{ $siswa->id }}"
                     class="btn btn-sm btn-warning">
                         Edit
                 </a>
-                <form action="/siswa/{{$siswa->id}}" method="post">
+                <form action="/siswa/{{$siswa->id}}" method="post"
+                    onsubmit="return confirm('Yakin mau hapus data ini?')">
                     @csrf
                     @method('DELETE')
-                <button class="btn btn-sm btn-danger">Hapus</button>
+                    <button class="btn btn-sm btn-danger">Hapus</button>
                 </form>
+
             </td>
         </div>
         </tr>

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Mapel;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoresiswaRequest;
 
 class SiswaController extends Controller
@@ -12,13 +13,15 @@ class SiswaController extends Controller
     //
 
     public function index(){
-        $data=siswa::paginate(5);
-        return view('siswa',compact('data'));
+        $data = Siswa::with('mapel')->paginate(5);
+        $mapels = Mapel::all();
+        return view('siswa',compact('data','mapels'));
 
     }
     public function store(StoresiswaRequest $request){
-    $siswa=Siswa::create($request->validated());
-    return redirect('/siswa');
+    Siswa::create($request->validated());
+    return redirect('/siswa')->with('status','success')
+                            ->with('message','Data Berhasil Disimpan');
     }
     public function show($id){
         $siswa=Siswa::findOrFail($id);

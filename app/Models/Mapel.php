@@ -13,8 +13,8 @@ class Mapel extends Model
         'nama_mapel'
     ];
 
-    public function mapel(){
-    return $this->belongsTo(Mapel::class);
-    }
+    public function siswa(){
+        return $this->hasMany(Siswa::class);
+        }
 
 }

@@ -11,7 +11,7 @@
          *
          * @return void
          */
-      public function up()
+        public function up()
 {
     Schema::create('siswa', function (Blueprint $table) {
         $table->id();

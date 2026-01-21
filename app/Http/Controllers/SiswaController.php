@@ -10,18 +10,24 @@ use App\Http\Requests\StoresiswaRequest;
 
 class SiswaController extends Controller
 {
-    //
-
-    public function index(){
-        $data = Siswa::with('mapel')->paginate(5);
-        $mapels = Mapel::all();
-        return view('siswa',compact('data','mapels'));
-
+    public function index(Request $request){
+        $keyword=$request->keyword;
+        if ($keyword) {
+                    $data = Siswa::with('mapel')
+                    ->where('nama','LIKE','%'.$keyword.'%')
+                    ->orWhere('nis','LIKE','%'.$keyword.'%' )
+                    ->paginate(5);
+        } else {
+            $data=Siswa::with('mapel')->paginate(5);
+        }
+            $mapels = Mapel::all();
+            return view('siswa',compact('data','mapels'));
     }
     public function store(StoresiswaRequest $request){
     Siswa::create($request->validated());
-    return redirect('/siswa')->with('status','success')
-                            ->with('message','Data Berhasil Disimpan');
+    return redirect('/siswa')
+        ->with('status','success')
+        ->with('message','Data Berhasil Disimpan');
     }
     public function show($id){
         $siswa=Siswa::findOrFail($id);
@@ -39,6 +45,5 @@ class SiswaController extends Controller
         $siswa=Siswa::findOrFail($id);
         $siswa->delete();
         return redirect('/siswa');
-
     }
 }

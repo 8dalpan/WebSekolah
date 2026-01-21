@@ -92,10 +92,16 @@
         </div>
         </div>
     </div>
-                        {{-- table --}}
-                        <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Data Guru</h5>
+    <div class="my-3 col-12 col-sm-6 col-md-6">
+        <form class="d-flex" role="search">
+            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="keyword"/>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        </div>
+                    {{-- table --}}
+                <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Data Guru</h5>
                     </div>
                     <div class="card-body">
                     <table class="table table-bordered table-striped table-hover">
@@ -142,9 +148,8 @@
 
                     </table>
                     <div class="my-3 pagination">
-                        {{$data->links()}}
+                        {{$data->withquerystring()-> links()}}
                     </div>
                     </div>
         </div>
-
             @endsection

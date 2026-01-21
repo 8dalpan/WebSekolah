@@ -9,8 +9,12 @@ use App\Http\Requests\StoreguruRequest;
 
 class GuruController extends Controller
 {
-        public function index(){
-        $data=Guru::Paginate(5);
+    public function index(Request $request){
+        $keyword=$request->keyword;
+        $data=Guru::where('nip','LIKE','%'.$keyword.'%')
+        ->orwhere('nama','LIKE','%'.$keyword.'%')
+        ->orwhere('status_kepegawaian','LIKE','%'.$keyword.'%')
+        ->Paginate(5);
         return view('guru',compact('data'));
     }
 

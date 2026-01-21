@@ -1,8 +1,8 @@
-            @extends('layouts.mainlayout')
-            @section('title', 'Halaman Siswa')
-            @section('content')
-        <div class="container mt-3">
-        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalSiswa">
+@extends('layouts.mainlayout')
+@section('title', 'Halaman Siswa')
+@section('content')
+    <div class="container mt-3">
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal"         data-bs-target="#modalSiswa">
                 + Tambah Siswa
             </button>
             @if (Session::has('status'))
@@ -22,11 +22,8 @@
 
             <form action="/siswa" method="POST">
             @csrf
-
             <div class="modal-body">
-
             <div class="row">
-
             <div class="col-md-6">
 
             <div class="mb-3">
@@ -102,7 +99,12 @@
             </div>
             </div>
             </div>
-
+        <div class="my-3 col-12 col-sm-6 col-md-6   ">
+        <form class="d-flex" role="search">
+            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="keyword"/>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        </div>
             {{-- table --}}
             <div class="card shadow">
 
